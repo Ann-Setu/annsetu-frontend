@@ -34,13 +34,17 @@ function Navbar() {
       {/* CENTER - LINKS (DESKTOP) */}
       <div className="hidden md:flex gap-8 text-[#8B0000] font-medium">
 
-        {[
-          
-          "How It Works",
-          "Donate", 
-          "NGOs", 
-          "Impact"
-        ].map((item) => (
+        <NavLink to="/how-it-works" className="relative group cursor-pointer">
+          How It Works
+          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#FF9933] transition-all duration-300 group-hover:w-full"></span>
+        </NavLink>
+
+        <NavLink to="/about" className="relative group cursor-pointer">
+            About
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#FF9933] transition-all duration-300 group-hover:w-full"></span>
+          </NavLink>
+
+        {["NGOs", "Impact"].map((item) => (
           <a key={item} href="#" className="relative group cursor-pointer">
             {item}
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#FF9933] transition-all duration-300 group-hover:w-full"></span>
@@ -79,7 +83,15 @@ function Navbar() {
       {menuOpen && (
         <div className="absolute top-full left-0 w-full bg-[#FFF5E1] shadow-md flex flex-col items-center py-6 gap-4 md:hidden z-50">
 
-          {["Who We Are", "How It Works", "Donate", "NGOs", "Impact"].map((item) => (
+          <NavLink to="/how-it-works" className="text-[#8B0000] font-medium" onClick={() => setMenuOpen(false)}>
+            How It Works
+          </NavLink>
+
+          <NavLink to="/about" className="text-[#8B0000] font-medium" onClick={() => setMenuOpen(false)}>
+            About
+          </NavLink>
+
+          {["NGOs", "Impact"].map((item) => (
             <a key={item} href="#" className="text-[#8B0000] font-medium">
               {item}
             </a>

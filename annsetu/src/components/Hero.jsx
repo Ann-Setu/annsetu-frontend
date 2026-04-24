@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import impact from "../assets/impact.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -26,13 +26,15 @@ export default function Hero() {
           {/* Buttons */}
           <div className="mt-6 flex gap-4">
             
+            <NavLink to="/signup">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl font-semibold shadow-md"
-            >
-              <Link to="/donate">Donate Now 🍱</Link>
+              >
+              Donate Now 🍱
             </motion.button>
+              </NavLink>
 
             <motion.button
               whileHover={{ scale: 1.05 }}

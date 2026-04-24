@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 export default function HowItWorks() {
   const steps = [
@@ -64,12 +65,14 @@ export default function HowItWorks() {
 
       {/* CTA */}
       <div className="text-center mt-16">
+        <NavLink to="/signup">
         <motion.button
           whileHover={{ scale: 1.05 }}
           className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-xl font-semibold"
         >
-          Donate Food 🍱
+          Donate now 🍱
         </motion.button>
+        </NavLink>
       </div>
 
     </section>

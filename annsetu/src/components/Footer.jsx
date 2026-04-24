@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -35,7 +36,10 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            {["Home", "Services", "Contact", "Donate"].map((item) => (
+            <li className="hover:text-orange-400 cursor-pointer transition">
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+            {["Home", "Services", "Donate"].map((item) => (
               <li key={item} className="hover:text-orange-400 cursor-pointer transition">
                 {item}
               </li>
@@ -47,7 +51,10 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-4">Resources</h3>
           <ul className="space-y-2 text-sm">
-            {["About Us", "Impact", "FAQs", "Privacy Policy"].map((item) => (
+            <li className="hover:text-orange-400 cursor-pointer transition">
+              <NavLink to="/about">About Us</NavLink>
+            </li>
+            {["Impact", "FAQs", "Privacy Policy"].map((item) => (
               <li key={item} className="hover:text-orange-400 cursor-pointer transition">
                 {item}
               </li>
